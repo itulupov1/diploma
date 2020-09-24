@@ -2,10 +2,10 @@ const togglePopUp = () => {
 	const popUpCall = document.querySelector('.popup-call');
 
 	document.body.addEventListener('click', event => {
-		event.preventDefault();
 		const target = event.target;
 
 		if (target.classList.contains('call-btn')) {
+			event.preventDefault();
 			popUpCall.style.display = 'block';
 		}
 
@@ -13,7 +13,7 @@ const togglePopUp = () => {
 			popUpCall.style.display = 'none';
 		} else if (!target.closest('.popup-content') && popUpCall.style.display === 'block' &&
 			!target.classList.contains('call-btn')) {
-				popUpCall.style.display = 'none';
+			popUpCall.style.display = 'none';
 		}
 	});
 };
