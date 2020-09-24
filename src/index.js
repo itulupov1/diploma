@@ -1,7 +1,7 @@
 'use strict';
 
 
-import togglePopUp from './modules/onePopUp';
+import togglePopUp from './modules/togglePopUp';
 import sendForm from './modules/sendForm';
 import accordion from './modules/accordion';
 import discount from './modules/discount';
