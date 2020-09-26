@@ -14,7 +14,7 @@ import moreBtn from './modules/moreBtn';
 // popup's
 togglePopUp();
 //send ajax form
-sendForm();
+sendForm(calcAccordion());
 // accordion
 accordion();
 // discount

@@ -1,4 +1,4 @@
-const sendForm = () => {
+const sendForm = (calcBody) => {
 	const errorMessage = 'Что-то пошло не так...';
 	const loadMessage = 'Загрузка...';
 	const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
@@ -19,6 +19,9 @@ const sendForm = () => {
 		formData.forEach((val, key) => {
 			body[key] = val;
 		});
+		if (form.id === 'capture-form1') {
+			body.parametersCalc = calcBody;
+		}
 		postData(body)
 			.then(response => {
 				if (response.status !== 200) {

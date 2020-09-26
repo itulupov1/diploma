@@ -7,6 +7,7 @@ const accordion = () => {
 		panelContent.forEach((item, i) => {
 			if (index === i) {
 				item.classList.add('in');
+				animateAcc(i);
 			} else {
 				item.classList.remove('in');
 			}
@@ -28,6 +29,7 @@ const accordion = () => {
 			});
 		}
 	});
+
 };
 
 export default accordion;
