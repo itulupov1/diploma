@@ -7,6 +7,7 @@ const accordion = () => {
 		panelContent.forEach((item, i) => {
 			if (index === i) {
 				item.classList.add('in');
+				animateCSS(item, 'zoomIn');
 			} else {
 				item.classList.remove('in');
 			}
@@ -26,6 +27,23 @@ const accordion = () => {
 			});
 		}
 	});
+
+	const animateCSS = (element, animation, prefix = 'animate__') =>
+		new Promise((resolve, reject) => {
+			const animationName = `${prefix}${animation}`;
+			const node = element;
+
+			node.classList.add(`${prefix}animated`, animationName);
+
+			function handleAnimationEnd() {
+				node.classList.remove(`${prefix}animated`, animationName);
+				resolve('Animation ended');
+			}
+
+			node.addEventListener('animationend', handleAnimationEnd, {
+				once: true
+			});
+		});
 
 };
 
