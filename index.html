@@ -258,7 +258,7 @@
                             <div class="panel-body">
                                 <p>Введите расстояние до дома</p>
                                 <input type="text" class="distance">
-                                <button class="button construct-btn call-btn">Получить расчет и скидку</button>
+                                <button class="button construct-btn call-btnTwo">Получить расчет и скидку</button>
                             </div>
                         </div>
                     </div>
@@ -443,8 +443,8 @@
             <div class="col-lg-6 col-md-6">
                 <p class="question">Остались вопросы?</p>
                 <p>Введите свой вопрос и в течении 15 минут я свяжусь с вами!</p>
-                <form class="director-form">
-                    <input type="text" name="user_quest" placeholder="Введите свой вопрос" required>
+                <form id="director" class="director-form">
+                    <input type="text" class="user_quest" name="user_quest" placeholder="Введите свой вопрос" required>
                     <button class="button director-btn consultation-btn" name="submit" type="submit">Получить
                         консультацию
                     </button>
@@ -559,6 +559,27 @@
                 <input class="phone-user" type="text" id="phone_13" name="user_phone" placeholder="+7(___)___-__-__"
                        required>
                 <button class="button capture-form-btn" name="submit" type="submit">Получить консультацию</button>
+                <p class="small">Вы получите расчет стоимости с учетом выбора <br>подходящего объема септика. типа
+                    грунта, <br> расположения объектов на участке, уровня грунтовых <br> вод, типа фундамента дома и еще
+                    7 параметров</p>
+            </form>
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="popup-callTwo popup">
+    <div class="popup-dialog">
+        <div class="popup-content">
+            <!-- <div class="popup-form"> -->
+            <form id="capture-form5" class="capture-form text-center">
+                <span class="circle"><button class="popup-close">&times;</button></span>
+                <label for="name_1">Как к вам обращаться</label>
+                <input type="text" id="name_15" name="user_name" placeholder="Ваше имя" required>
+                <label for="phone_1">Ваш телефон для получения скидки</label>
+                <input class="phone-user" type="text" id="phone_15" name="user_phone" placeholder="+7(___)___-__-__"
+                    required>
+                <button class="button capture-form-btn" name="submit" type="submit">Получить расчет и скидку</button>
                 <p class="small">Вы получите расчет стоимости с учетом выбора <br>подходящего объема септика. типа
                     грунта, <br> расположения объектов на участке, уровня грунтовых <br> вод, типа фундамента дома и еще
                     7 параметров</p>

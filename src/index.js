@@ -4,11 +4,8 @@
 import togglePopUp from './modules/togglePopUp';
 import sendForm from './modules/sendForm';
 import accordion from './modules/accordion';
-import discount from './modules/discount';
 import calcAccordion from './modules/calcAccordion';
 import moreBtn from './modules/moreBtn';
-
-
 
 
 // popup's
@@ -17,9 +14,8 @@ togglePopUp();
 sendForm(calcAccordion());
 // accordion
 accordion();
-// discount
-discount();
 // calc-accordion
 calcAccordion();
 // btn more
 moreBtn();
+

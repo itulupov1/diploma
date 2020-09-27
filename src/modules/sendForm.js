@@ -1,15 +1,20 @@
-const sendForm = (calcBody) => {
-	const errorMessage = 'Что-то пошло не так...';
-	const loadMessage = 'Загрузка...';
-	const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
+const sendForm = calcBody => {
+	const errorMessage = 'Что-то пошло не так...',
+		loadMessage = 'Загрузка...',
+		successMessage = 'Спасибо! Мы скоро с вами свяжемся!',
+		quest = document.querySelector('.user_quest');
 
 	const statusMessage = document.createElement('div');
 	statusMessage.style.cssText = 'font-size: 2rem';
 
-	const submitBtn = event => {
+	const submitBtn = (event, quest) => {
 		event.preventDefault();
 		const target = event.target;
 		const form = document.getElementById(`${target.id}`);
+
+		if (form.id === 'director') {
+			return;
+		}
 
 		statusMessage.textContent = loadMessage;
 		form.append(statusMessage);
@@ -19,8 +24,11 @@ const sendForm = (calcBody) => {
 		formData.forEach((val, key) => {
 			body[key] = val;
 		});
-		if (form.id === 'capture-form1') {
+		if (form.id === 'capture-form5') {
 			body.parametersCalc = calcBody;
+		}
+		if (form.id === 'capture-form4') {
+			body.question = quest;
 		}
 		postData(body)
 			.then(response => {
@@ -31,6 +39,7 @@ const sendForm = (calcBody) => {
 				form.querySelectorAll('input').forEach(elem => {
 					elem.value = '';
 				});
+				document.querySelector('.user_quest').value = '';
 				setTimeout(() => {
 					statusMessage.textContent = '';
 				}, 3000);
@@ -40,7 +49,9 @@ const sendForm = (calcBody) => {
 				console.error(error);
 			});
 	};
-	document.body.addEventListener('submit', submitBtn);
+	document.body.addEventListener('submit', event => {
+		submitBtn(event, quest.value);
+	});
 
 	document.body.addEventListener('input', event => {
 		const target = event.target;

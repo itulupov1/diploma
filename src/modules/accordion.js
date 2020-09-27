@@ -1,20 +1,17 @@
 const accordion = () => {
-	const blockAcc = document.querySelector('#accordion-two');
-	const panelHeading = blockAcc.querySelectorAll('.panel-heading');
-	const panelContent = blockAcc.querySelectorAll('.panel-collapse');
+	const blockAcc = document.querySelector('#accordion-two'),
+		panelHeading = blockAcc.querySelectorAll('.panel-heading'),
+		panelContent = blockAcc.querySelectorAll('.panel-collapse');
 
 	const togglePanelContent = index => {
 		panelContent.forEach((item, i) => {
 			if (index === i) {
 				item.classList.add('in');
-				animateAcc(i);
 			} else {
 				item.classList.remove('in');
 			}
 		});
 	};
-
-
 
 	blockAcc.addEventListener('click', event => {
 		event.preventDefault();

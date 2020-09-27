@@ -1,10 +1,9 @@
 const calcAccordion = () => {
-	const blockCalcAcc = document.querySelector('#accordion');
-	const panelHeading = blockCalcAcc.querySelectorAll('.panel-heading');
-	const panelContent = blockCalcAcc.querySelectorAll('.panel-collapse');
-	const btns = blockCalcAcc.querySelectorAll('.construct-btn');
-	const inputDistance = blockCalcAcc.querySelector('.distance');
-	const callBtnHere = blockCalcAcc.querySelector('.call-btn');
+	const blockCalcAcc = document.querySelector('#accordion'),
+		panelHeading = blockCalcAcc.querySelectorAll('.panel-heading'),
+		panelContent = blockCalcAcc.querySelectorAll('.panel-collapse'),
+		btns = blockCalcAcc.querySelectorAll('.construct-btn'),
+		inputDistance = blockCalcAcc.querySelector('.distance');
 
 	const togglePanelContent = index => {
 		panelContent.forEach((item, i) => {
@@ -17,7 +16,6 @@ const calcAccordion = () => {
 	};
 
 	blockCalcAcc.addEventListener('click', event => {
-		//event.preventDefault();
 		let target = event.target;
 		target = target.closest('.panel-heading');
 
@@ -56,9 +54,9 @@ const calcAccordion = () => {
 
 
 	const countSum = () => {
-		let total = 10000;
-		let thoWell = 5000;
-		let count = 10000;
+		let total = 10000,
+			thoWell = 5000,
+			count = 10000;
 
 		if (!switchCheckbox.checked) {
 			secondWell.style.display = 'block';
@@ -124,10 +122,7 @@ const calcAccordion = () => {
 	};
 	countSum();
 
-	blockCalcAcc.addEventListener('change', event => {
-		const target = event.target;
-		countSum();
-	});
+	blockCalcAcc.addEventListener('change', countSum);
 
 	return bodyCalc;
 };

@@ -1,11 +1,9 @@
 const moreBtn = () => {
-	const block = document.querySelector('.sentence');
-	const oneItem = block.querySelectorAll('.col-xs-12');
-	const addMore = document.querySelector('.add-sentence-btn');
+	const block = document.querySelector('.sentence'),
+		oneItem = block.querySelectorAll('.col-xs-12'),
+		addMore = document.querySelector('.add-sentence-btn');
 
-	addMore.addEventListener('click', event => {
-		const target =event.target;
-
+	addMore.addEventListener('click', () => {
 		oneItem.forEach(item => {
 			if (item.classList.contains('hidden')) {
 				item.classList.remove('hidden');

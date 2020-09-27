@@ -1,7 +1,9 @@
 const togglePopUp = () => {
-	const popUpCall = document.querySelector('.popup-call');
-	const popUpDiscount = document.querySelector('.popup-discount');
-	const popUpCheck = document.querySelector('.popup-check');
+	const popUpCall = document.querySelector('.popup-call'),
+		popUpDiscount = document.querySelector('.popup-discount'),
+		popUpCheck = document.querySelector('.popup-check'),
+		popUpConsultation = document.querySelector('.popup-consultation'),
+		popUpCallTwo = document.querySelector('.popup-callTwo');
 
 	document.body.addEventListener('click', event => {
 		const target = event.target;
@@ -31,6 +33,14 @@ const togglePopUp = () => {
 		}
 		if (target.classList.contains('check-btn')) {
 			popUpCheck.style.display = 'block';
+		}
+		if (target.classList.contains('director-btn')) {
+			if (document.querySelector('.user_quest').value !== '') {
+				popUpConsultation.style.display = 'block';
+			}
+		}
+		if (target.classList.contains('call-btnTwo')) {
+			popUpCallTwo.style.display = 'block';
 		}
 	});
 };
